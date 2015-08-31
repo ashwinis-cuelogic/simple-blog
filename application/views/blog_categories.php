@@ -14,13 +14,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <div class="container">
+	<?php include_once "view_menu.php"; ?>
 	<h2>Blog Categories</h2>
 	<div class="row">
 		<?php foreach ( $blog_categories as $category ) { ?>
 			<div class="col-md-4">
 				<a href="<?php echo $this->config->base_url(); ?>index.php/blog/index/<?php echo $category->id;?>">
 					<p><?php echo $category->category_name ?></p>    
-	        		<img src="themes/img/<?php echo $category->image_name ?>" alt="<?php echo $category->description ?>" style="width:100%;height:150px">
+	        		<img src="http://localhost/Project/simple-blog/themes/img/<?php echo $category->image_name ?>" alt="<?php echo $category->description ?>" style="width:100%;height:150px">
 				</a>
 			</div>
 		<?php } ?>

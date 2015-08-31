@@ -5,7 +5,9 @@ class Comment extends CI_Controller {
 
 
 	function __construct(){
-        parent::__construct();       
+        parent::__construct();    
+        $this->load->helper('form');
+        $this->load->helper('url');   
     }
     
     public function index(){
@@ -13,7 +15,7 @@ class Comment extends CI_Controller {
         $arrobjComments['blog'] = $this->blog_model->getBlogs($this->uri->segment(3));
         $this->load->model('comment_model');
         $arrobjComments['comments'] = $this->comment_model->getComments($this->uri->segment(3));
-        
+
         $this->load->view('view_comment', $arrobjComments );    
     }	
 

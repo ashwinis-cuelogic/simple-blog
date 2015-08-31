@@ -14,6 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 	<div class="container">
+		<?php include_once "view_menu.php"; ?>
 		<?php foreach ($blogs as $blog) {?>
 			<h1><?php echo $blog->title ?></h1>
 			<blockquote>
