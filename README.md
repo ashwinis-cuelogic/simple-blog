@@ -2,6 +2,8 @@ Simple Blog application
 
 PHP version 5.5.9
 
+Framework : CodeIgniter-3.0.0
+
 Database: Mysql
 
 
