@@ -4,7 +4,7 @@ if (true == isset($this->session->userdata["first_name"])){ ?>
 	<p>Welcome <?php echo $this->session->userdata["first_name"]; ?>
 		<a href="<?php echo $this->config->base_url(); ?>index.php/login/log_out">Log out</a>
 	</p>
-	<ul class="nav navbar-nav navbar-right">
+	<ul class="nav nav-pills topnav">
 		<li>
 			<a href="<?php echo $this->config->base_url(); ?>index.php/blog/create_blog">Create Blog</a>
 		</li>

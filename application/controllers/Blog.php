@@ -54,6 +54,18 @@ class Blog extends CI_Controller {
         redirect('blog/blog_detail/'.$this->uri->segment(3));
     }
 
+    public function unpublish_blog() {
+    	$this->load->model('blog_model');
+        $this->blog_model->unpublishBlogPost($this->uri->segment(3));
+       	redirect('blog');
+    }
+
+    public function publish_blog() {
+    	$this->load->model('blog_model');
+        $this->blog_model->publishBlogPost($this->uri->segment(3));
+       	redirect('blog');
+    }
+
     public function validateBlog() {
     	
     }

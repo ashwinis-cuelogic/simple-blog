@@ -115,6 +115,13 @@
                 <?php if(true == isset($this->session->userdata["first_name"])){ ?>
                     <a href="<?php echo $this->config->base_url(); ?>index.php/blog/edit_blog/<?php echo $blogs[0]->id ?>">Edit</a> 
                 <?php } ?>
+                
+                <?php if(1 == $blogs[0]->Publish){ ?>
+                    <a href="<?php echo $this->config->base_url(); ?>index.php/blog/unpublish_blog/<?php echo $blogs[0]->id ?>">UnPublish</a> 
+                <?php }else { ?>
+                    <a href="<?php echo $this->config->base_url(); ?>index.php/blog/publish_blog/<?php echo $blogs[0]->id ?>">Publish</a> 
+
+                <?php  } ?>
             </p>
             </div>
         </div>

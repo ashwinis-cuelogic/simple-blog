@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	 <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../themes/css/custom.css">
+	<link rel="stylesheet" href="http://localhost/Project/simple-blog/themes/css/custom.css">
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
@@ -17,8 +17,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <div class="container">
-	<?php include_once "view_menu.php"; ?>
+	 <div>
+	        <?php 
+	        if (true == isset($this->session->userdata["first_name"])){ ?>
+	            <p>Welcome <?php echo $this->session->userdata["first_name"]; ?>
+	                <a href="<?php echo $this->config->base_url(); ?>index.php/login/log_out">Log out</a>
+	            </p>
+	            <ul class="nav nav-pills topnav">
+	                <li>
+	                    <a href="<?php echo $this->config->base_url(); ?>index.php/blog/create_blog">Create Blog</a>
+	                </li>
+	                <li>
+	                    <a href="<?php echo $this->config->base_url(); ?>index.php/category">Blog Categories</a>
+	                </li>
+	                 
+	            </ul>
+	        <?php } ?>
+    </div>
 	<div class="blog">
+	<br>
 	<form method="post" action='<?php echo $this->config->base_url(); ?>index.php/blog/insert_blog' >
 		<p>
 
