@@ -20,7 +20,6 @@ class Blog extends CI_Controller {
 		 $arrobjBlogs['blogs'] = $this->blog_model->getBlogs($this->uri->segment(3));
         $this->load->view('blog_detail', $arrobjBlogs );  
 	}
-
 	
 	 public function create_blog() {
         
