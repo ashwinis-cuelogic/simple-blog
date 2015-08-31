@@ -123,6 +123,7 @@
             </div>
         </div>
        <div class="row">
+       <a href="<?php echo $this->config->base_url(); ?>index.php/blog/blog_detail/<?php echo $blog[0]->id; ?>">Back to blogs</a>
            <form method="post" action='<?php echo $this->config->base_url(); ?>index.php/comment/insert_comment' >
             <input type="hidden" name="blog_id" value="<?php echo $blog[0]->id; ?>">
             <p><textarea placeholder="Comments" name="comment" required></textarea></p>
