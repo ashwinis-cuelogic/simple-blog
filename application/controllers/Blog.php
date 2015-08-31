@@ -9,7 +9,7 @@ class Blog extends CI_Controller {
 
 	public function index() {
 		$this->load->model( 'blog_model' );
-		$arrobjBlogs[ 'blogs' ] = $this->blog_model->getBlogs();
-		$this->load->view( 'view_blogs', $arrobjBlogs );
+		 $arrobjBlogs['blogs'] = $this->blog_model->getBlogsByCategoryId($this->uri->segment(3));
+        $this->load->view('view_blogs', $arrobjBlogs );  
 	}
 }

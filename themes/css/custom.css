@@ -1,0 +1,23 @@
+.topnav{
+	background-color: #787975;
+
+}
+
+body {
+	background-color: #F1F4D7;
+}
+li a{
+color: #FBFBF7;
+}
+.login {
+	position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+    text-align: center;
+}
