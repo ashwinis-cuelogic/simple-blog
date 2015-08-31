@@ -18,11 +18,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="container">
 	<?php include_once "view_menu.php"; ?>
-	<div class="login">
+	<div class="blog">
 	<form method="post" action='<?php echo $this->config->base_url(); ?>index.php/blog/insert_blog' >
+		<p>
+
+			<select name="blog_category_id" required> 
+			<option value="">Select Blog Category</option>
+			<?php foreach ($blog_categories as $blog_category) { ?>
+				<option value="<?php echo $blog_category->id;?>"><?php echo $blog_category->category_name;?></option>
+			<?php } ?>
+			</select>
+		</p>
 		<p><input placeholder="Title" type="text" name="title" required /></p>
-		<p><textarea placeholder="Contents of blog" name="body"row="10" required></textarea></p>
-		
+		<p><textarea placeholder="Contents of blog" name="description"row="10" required></textarea></p>
+		<input type="hidden" name="user_id" value="<?php echo $this->session->userdata('userid');?>">
 		<P><input type="submit" value="Create Blog" /></P>
 	</form>
 	</div>

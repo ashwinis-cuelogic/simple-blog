@@ -112,7 +112,7 @@
              <div class="row">
                <p>
                 <a href="<?php echo $this->config->base_url(); ?>index.php/comment/index/<?php echo $blogs[0]->id ?>">Comment</a> 
-                <?php if(true == isset($logged_user_type_id)){ ?>
+                <?php if(true == isset($this->session->userdata["first_name"])){ ?>
                     <a href="<?php echo $this->config->base_url(); ?>index.php/blog/edit_blog/<?php echo $blogs[0]->id ?>">Edit</a> 
                 <?php } ?>
             </p>

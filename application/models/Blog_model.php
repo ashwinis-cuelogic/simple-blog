@@ -12,12 +12,14 @@ class Blog_model extends CI_Model{
                             u.first_name,
                             u.last_name 
                     FROM blogs b
-                        JOIN users u ON( b.user_id = u.id )";
+                        JOIN users u ON( b.user_id = u.id )
+                    WHERE b.publish = 1 ";
                     if( false == is_null( $blog_id ) ) {
-                        $strSql.= " WHERE b.id = ". $blog_id;
+                        $strSql.= " AND b.id = ". $blog_id;
                     }
-              
+             
            $query = $this->db->query($strSql);
+           
            $arrobjBlogs = $query->result();
            return $arrobjBlogs;
     }
@@ -29,9 +31,10 @@ class Blog_model extends CI_Model{
                             u.last_name
                     FROM blogs b
                         JOIN blog_categories bc ON( b.blog_category_id = bc.id )
-                        JOIN users u ON( b.user_id = u.id ) ";
+                        JOIN users u ON( b.user_id = u.id ) 
+                    WHERE b.publish = 1 ";
                     if( false == is_null( $blog_category_id ) ) {
-                        $strSql.= " WHERE bc.id = ". $blog_category_id;
+                        $strSql.= " AND bc.id = ". $blog_category_id;
                     }
                
            $query = $this->db->query($strSql);

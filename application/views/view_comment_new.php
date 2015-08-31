@@ -61,8 +61,8 @@
                         <li>
                             <a href="<?php echo $this->config->base_url(); ?>index.php/category">Blog Categories</a>
                         </li>
-                          <li>
-                            <a href="<?php echo $this->config->base_url(); ?>index.php/blog">Blog</a>
+                         <li>
+                         <a href="<?php echo $this->config->base_url(); ?>index.php/blog/index/<?php echo $blog[0]->blog_category_id; ?>">Blogs</a>
                         </li>
                     </ul>
                 <?php } else { ?>
@@ -73,6 +73,9 @@
                         </li>
                         <li>
                             <a href="<?php echo $this->config->base_url(); ?>index.php/category">Blog Categories</a>
+                        </li>
+                        <li>
+                         <a href="<?php echo $this->config->base_url(); ?>index.php/blog/index/<?php echo $blog[0]->blog_category_id; ?>">Blogs</a>
                         </li>
                     </ul>
 
@@ -85,14 +88,13 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('http://localhost/Project/simple-blog/themes/img/about-bg.jpg')">
+    <header class="intro-header" style="background-image: url('http://localhost/Project/simple-blog/themes/img/home-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Smart Blog</h1>
+                        <h1><?php echo $blog[0]->title;?></h1>
                         <hr class="small">
-                        <span class="subheading">A blog and more </span>
                     </div>
                 </div>
             </div>
@@ -103,19 +105,30 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <?php foreach ($blogs as $blog) {?>
-                 <div class="post-preview">
-                    <a href="<?php echo $this->config->base_url(); ?>index.php/blog/blog_detail/<?php echo $blog->id ?>">
-                        <h2 class="post-title">
-                           <?php echo $blog->title ?>
-                        </h2>
-                        
-                    </a>
-                    <p class="post-meta">Posted by <?php echo $blog->first_name; echo " "; echo $blog->last_name; ?> </p>
+                <div class="row">
+                   <?php if( count($comments) > 0 ){?>
+                        <?php foreach ($comments as $comment) {?>
+                            <blockquote>
+                                <h4><?php echo $comment->comment ?></h4>
+                                <footer>
+                                    <p><?php echo $comment->author ?></p>
+                                </footer>
+                            </blockquote>
+                            <hr>  
+                        <?php } ?>
+                    <?php } else {
+                        echo "No Comments";
+                    } ?></n>
                 </div>
-                <hr>
-                <?php } ?>
-              </div>
+            </div>
+        </div>
+       <div class="row">
+           <form method="post" action='<?php echo $this->config->base_url(); ?>index.php/comment/insert_comment' >
+            <input type="hidden" name="blog_id" value="<?php echo $blog[0]->id; ?>">
+            <p><textarea placeholder="Comments" name="comment" required></textarea></p>
+            <p><input type="text" placeholder="Name" name="author" required /></p>
+            <P><input type="submit" value="Submit Comment" /></P>
+         </form>
         </div>
     </div>
 
