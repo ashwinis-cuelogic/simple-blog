@@ -23,6 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</blockquote>
 			<p>
 				<a href="<?php echo $this->config->base_url(); ?>index.php/comment/index/<?php echo $blog->id ?>">Comment</a> 
+				<?php if(true == isset($logged_user_type_id)){ ?>
+					<a href="<?php echo $this->config->base_url(); ?>index.php/blog/edit_blog/<?php echo $blog->id ?>">Edit</a> 
+				<?php } ?>
 			</p>
 			<hr>  
 		<?php } ?>

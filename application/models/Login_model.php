@@ -21,10 +21,10 @@ class Login_model extends CI_Model{
             // If there is a user, then create session data
              $data = array(
                     'userid' => $row->id,
-                    'firstname' => $row->first_name,
-                    'lastname' => $row->last_name,
+                    'first_name' => $row->first_name,
+                    'last_name' => $row->last_name,
                     'username' => $row->username,
-                    'usertypeid' => $row->user_type_id,
+                    'user_type_id' => $row->user_type_id,
                     'validated' => true
                     );
             $this->session->set_userdata($data);

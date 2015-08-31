@@ -24,4 +24,9 @@ class Login extends CI_Controller {
               redirect('category');
         }        
     }
+
+     public function log_out(){
+        $this->session->sess_destroy();
+        redirect('category');
+    }
 }
