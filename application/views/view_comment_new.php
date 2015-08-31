@@ -177,9 +177,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="http://localhost/Project/simple-blog/themes/js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
+    <!-- Custom Theme JavaScript 
     <script src="http://localhost/Project/simple-blog/themes/js/clean-blog.min.js"></script>
-
+-->
 </body>
 
 </html>

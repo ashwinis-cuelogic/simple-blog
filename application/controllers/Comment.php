@@ -16,7 +16,7 @@ class Comment extends CI_Controller {
         $this->load->model('comment_model');
         $arrobjComments['comments'] = $this->comment_model->getComments($this->uri->segment(3));
 
-        $this->load->view('view_comment', $arrobjComments );    
+        $this->load->view('view_comment_new', $arrobjComments );    
     }	
 
     public function insert_comment(){
